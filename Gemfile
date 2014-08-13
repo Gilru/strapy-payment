@@ -13,8 +13,15 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
-gem 'sqlite3', group: [:development, :production]
-gem 'rails_12factor', group: :production
+group :development, :test do
+  gem 'sqlite3'
+end
+
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
